@@ -8,12 +8,9 @@ import pandas as pd
 import plotly.express as px
 
 # read the data and process it for use in the control panel
-
 data = pd.read_csv("data/timesData.csv")
 data["Year"] = pd.to_datetime(data["year"], format="%Y")
 data.sort_values("year", inplace=True)
-# data[' index'] = range(1, len(data) + 1)
-
 
 df = data.groupby(
     ['university_name', 'country', 'num_students', 'international_students'])[
